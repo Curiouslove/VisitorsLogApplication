@@ -71,6 +71,7 @@
     </dependencies>
 
     <build>
+        <finalName>visitors-log</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
