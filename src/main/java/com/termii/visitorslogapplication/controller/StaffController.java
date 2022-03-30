@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @AllArgsConstructor
 @RestController
@@ -28,6 +29,7 @@ public class StaffController {
     @PostMapping("/visit")
     public ResponseEntity<?> logNewVisit(@RequestBody NewVisitRequest newVisitRequest){
 
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @PostMapping("/staff")
@@ -45,8 +47,8 @@ public class StaffController {
 
     @GetMapping("/staff/{id}")
     public ResponseEntity<?> getSpecificStaff(@PathVariable Long id){
-
-
+        Optional<Staff> staff = staffService.findStaff(id);
+        return new ResponseEntity<>(staff.get(), HttpStatus.OK);
     }
 
 }
