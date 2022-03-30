@@ -32,7 +32,8 @@ public class StaffController {
 
     @PostMapping("/staff")
     public ResponseEntity<?> addNewStaff(@RequestBody StaffDto staffDto){
-        return ;
+        Staff staff = staffService.addNewStaff(staffDto);
+        return new ResponseEntity<>(staff, HttpStatus.CREATED) ;
     }
 
     @GetMapping("/staff")

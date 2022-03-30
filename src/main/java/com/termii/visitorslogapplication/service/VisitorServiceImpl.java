@@ -19,8 +19,8 @@ public class VisitorServiceImpl implements VisitorService {
     @Override
     public Visitor addNewVisitor(VisitorDto visitorDto) {
 
-        Boolean localGovernmentExist = existsByEmail(visitorDto.getEmailAddress());
-        if (localGovernmentExist){
+        Boolean visitorExist = existsByEmail(visitorDto.getEmailAddress());
+        if (visitorExist){
             throw new ResourceNotFound("Visitor already exist");
         }
 
