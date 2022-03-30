@@ -18,8 +18,10 @@ import java.util.List;
 public class StaffController {
     private StaffService staffService;
 
+
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginDto loginDto){
+
         return  new ResponseEntity<>("successfull", HttpStatus.OK);
     }
 
@@ -30,7 +32,7 @@ public class StaffController {
 
     @PostMapping("/staff")
     public ResponseEntity<?> addNewStaff(@RequestBody StaffDto staffDto){
-
+        return ;
     }
 
     @GetMapping("/staff")
